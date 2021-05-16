@@ -26,8 +26,9 @@ function fiveday(lat, lon) {
         })
 }
 
+
 //Declare a variable to store the searched city
-// var city="";
+// var city = "";
 // variable declaration
 var searchCity = $("#search-city");
 var searchButton = $("#search-button");
@@ -64,7 +65,7 @@ function currentWeather(city) {
     $.ajax({
         url: queryURL,
         method: "GET",
-    }).then(function (res) {
+    }).then(function (response) {
 
         // parse the response to display the current weather including the City name. the Date and the weather icon. 
         console.log(response);
@@ -114,7 +115,7 @@ function currentWeather(city) {
 // This function returns the UVIindex response.
 function UVIndex(ln, lt) {
     //lets build the url for uvindex.
-    var uvqURL = "https://api.openweathermap.org/data/2.5/uvi?appid=" + apikey + "&lat=" + lat + "&lon=" + lon;
+    var uvqURL = "https://api.openweathermap.org/data/2.5/uvi?appid=" + apikey + "&lat=" + lt + "&lon=" + ln;
     $.ajax({
         url: uvqURL,
         method: "GET"
@@ -138,12 +139,15 @@ function forecast(cityid) {
             var iconurl = "https://openweathermap.org/img/wn/" + iconcode + ".png";
             var tempK = response.list[((i + 1) * 8) - 1].main.temp;
             var tempF = (((tempK - 273.5) * 1.80) + 32).toFixed(2);
+            // var windsmph = (((ws * 2.237) *1.80) +32).toFixed(1);
             var humidity = response.list[((i + 1) * 8) - 1].main.humidity;
+
 
             $("#fDate" + i).html(date);
             $("#fImg" + i).html("<img src=" + iconurl + ">");
             $("#fTemp" + i).html(tempF + "&#8457");
             $("#fHumidity" + i).html(humidity + "%");
+            $("#fcurrentWSpeed").html(currentWSpeed + "MPH");
         }
 
     });
@@ -193,3 +197,14 @@ $("#search-button").on("click", displayWeather);
 $(document).on("click", invokePastSearch);
 $(window).on("load", loadlastCity);
 $("#clear-history").on("click", clearHistory);
+
+
+
+
+
+
+
+
+
+
+
