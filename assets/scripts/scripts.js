@@ -49,7 +49,7 @@ function find(c) {
     return 1;
 }
 //Set up the API key
-var APIKey = "fd29546ba9bb3f2730be5649db45b849";
+// var apikey = "fd29546ba9bb3f2730be5649db45b849";
 // Display the curent and future weather to the user after grabing the city form the input text box.
 function displayWeather(event) {
     event.preventDefault();
@@ -121,6 +121,15 @@ function UVIndex(ln, lt) {
         method: "GET"
     }).then(function (response) {
         $(currentUvindex).html(response.value);
+        $(currentUvindex).removeClass("bg-danger", "bg-success", "bg-warning")
+        if (response.value >= 8) {
+            $(currentUvindex).addClass("bg-danger")
+        }
+        else if (response.value <= 3) {
+            $(currentUvindex).addClass("bg-success")
+        } else {
+            $(currentUvindex).addClass("bg-warning")
+        }
     });
 }
 
@@ -194,7 +203,7 @@ function clearHistory(event) {
 
 }
 //Click Handlers
-$("#search-button").on("click", displayWeather);
+$("#search-form").on("submit", displayWeather);
 $(document).on("click", invokePastSearch);
 $(window).on("load", loadlastCity);
 $("#clear-history").on("click", clearHistory);

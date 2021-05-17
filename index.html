@@ -32,12 +32,13 @@
         <!--Here we create an HTML form for handling the inputs-->
         <h4 class="pt-1"><strong>Search for a City:</strong></h4>
         <!--Here we create the text box for capturing the search city Name-->
-        <div class="input-group mb-3">
+        <form id="search-form" class="input-group mb-3">
+        
           <input type="text" class="form-control" id="search-city" aria-label="City Search" aria-describedby="search-button">
           <div class="input-group-append">
             <button class=" btn bg-primary text-light" id="search-button"><i class="fa fa-search"></i></button>
           </div>
-        </div>
+        </form>
         <!--section for search city history-->
         <button class=" btn btn-primary" type="button" id="clear-history">Clear history</button>
         <ul class="list-group">
@@ -51,7 +52,7 @@
             <p>Temperature:<span class="current" id="temperature"></span></p>
             <p>Humidity:<span class="current" id="humidity"></span></p>
             <p>Wind Speed:<span class="current" id="wind-speed"></span></p>
-            <p>UV index:<span class="current bg-danger rounded py-2 px-2 text-white" id="uv-index"></span></p>
+            <p>UV index:<span class="current rounded py-2 px-2 text-white" id="uv-index"></span></p>
           </div>
         </div>
         <!--Row for future data to be dumped here-->
