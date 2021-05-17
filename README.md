@@ -20,9 +20,9 @@ github: https://github.com/harrisfd/supperweatherdashboardFDH
 
 Deployed Link: https://harrisfd.github.io/supperweatherdashboardFDH/
 
-<img src="./assets/images/weatherdashboardfdh.jpg" alt="JPG of the application"/>
+<img src="../assets/images/weatherdashboardfdh.jpg" alt="JPG of the application"/>
 
-<img src="./assets/images/weatherdashboardfdh1.jpg" alt="JPG of the application"/>
+<img src="../assets/images/weatherdashboardfdh1.jpg" alt="JPG of the application"/>
 
 ## Roadmap
 
